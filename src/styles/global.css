@@ -1,0 +1,102 @@
+:root {
+  --bg: #0a0a0d;
+  --bg-raised: #131318;
+  --stage-bg: #0a0a0d;
+  --ink: #f2efe9;
+  --muted: #8b8893;
+  --faint: #4a4852;
+  --line: rgba(242, 239, 233, 0.08);
+  --line-strong: rgba(242, 239, 233, 0.18);
+  /* Rojo carmesí de la bandera de Madrid */
+  --crimson: #d4002a;
+  --crimson-hi: #ff2d55;
+  --crimson-glow: rgba(212, 0, 42, 0.45);
+  --font-sans: 'Space Grotesk Variable', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono Variable', ui-monospace, monospace;
+  color-scheme: dark;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+}
+
+::selection {
+  background: var(--crimson);
+  color: #fff;
+}
+
+.mono {
+  font-family: var(--font-mono);
+}
+
+/* Shared small button used by the inspector and grid toolbars */
+.tool-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  height: 36px;
+  padding: 0 14px;
+  border: 1px solid var(--line-strong);
+  border-radius: 8px;
+  background: transparent;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition:
+    background 0.15s,
+    border-color 0.15s;
+}
+
+.tool-btn:hover:not(:disabled) {
+  background: var(--line);
+  border-color: var(--ink);
+}
+
+.tool-btn:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
+.tool-btn.primary {
+  background: var(--crimson);
+  border-color: var(--crimson);
+  color: #fff;
+}
+
+.tool-btn.primary:hover {
+  background: var(--crimson-hi);
+  border-color: var(--crimson-hi);
+}
+
+.tool-btn svg {
+  width: 14px;
+  height: 14px;
+}
+
+:focus-visible {
+  outline: 2px solid var(--crimson-hi);
+  outline-offset: 3px;
+}

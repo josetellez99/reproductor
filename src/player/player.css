@@ -1,0 +1,142 @@
+.player {
+  position: fixed;
+  inset: 0;
+  background: #000;
+}
+
+.player[data-idle='true'] {
+  cursor: none;
+}
+
+.player__stage {
+  position: absolute;
+  inset: 0;
+}
+
+/* Overlay never blocks the scene: only its buttons take pointer events */
+.player__controls {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  transition: opacity 0.4s;
+}
+
+.player[data-idle='true'] .player__controls {
+  opacity: 0;
+}
+
+.player__controls button {
+  pointer-events: auto;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--line-strong);
+  cursor: pointer;
+  backdrop-filter: blur(12px);
+  transition:
+    background 0.15s,
+    transform 0.15s,
+    border-color 0.15s;
+}
+
+.player__controls button svg {
+  width: 45%;
+  height: 45%;
+}
+
+.player__top {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  display: flex;
+  gap: 8px;
+}
+
+.player__icon-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: rgba(10, 10, 13, 0.55);
+}
+
+.player__icon-btn:hover {
+  border-color: var(--ink);
+}
+
+.player__bottom {
+  position: absolute;
+  left: 24px;
+  right: 24px;
+  bottom: 24px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.player__progress {
+  flex: 1;
+  display: flex;
+  gap: 4px;
+}
+
+.player__seg {
+  flex: 1;
+  height: 3px;
+  border-radius: 2px;
+  background: rgba(242, 239, 233, 0.15);
+  transition: background 0.3s;
+}
+
+.player__seg[data-state='done'] {
+  background: rgba(242, 239, 233, 0.6);
+}
+
+.player__seg[data-state='now'] {
+  background: var(--crimson);
+  box-shadow: 0 0 10px var(--crimson-glow);
+}
+
+.player__count {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.player__prev {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(10, 10, 13, 0.55);
+}
+
+.player__prev:disabled {
+  opacity: 0.3;
+  cursor: default;
+}
+
+.player__next {
+  position: relative;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: var(--crimson);
+  border-color: transparent;
+  color: #fff;
+  box-shadow: 0 10px 32px -8px var(--crimson-glow);
+}
+
+.player__next:hover {
+  background: var(--crimson-hi);
+  transform: translateX(2px);
+}
+
+.player__next[data-last='true']::after {
+  content: 'FIN';
+  position: absolute;
+  top: -18px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  color: var(--muted);
+}

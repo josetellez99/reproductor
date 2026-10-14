@@ -1,0 +1,325 @@
+/* Shared styles for scenes. Sizes are canvas pixels (1920×1080). */
+
+.s-root {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 110px 140px;
+  isolation: isolate;
+}
+
+.s-center {
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 40px;
+}
+
+.s-hero-title {
+  margin: 0;
+  font-size: 300px;
+  font-weight: 700;
+  letter-spacing: -0.065em;
+  line-height: 0.85;
+}
+
+.s-title {
+  margin: 0;
+  font-size: 120px;
+  font-weight: 700;
+  letter-spacing: -0.05em;
+  line-height: 0.95;
+}
+
+.s-sub {
+  margin: 0;
+  font-size: 46px;
+  font-weight: 400;
+  letter-spacing: -0.015em;
+  color: var(--muted);
+}
+
+.s-accent {
+  color: var(--crimson-hi);
+}
+
+.s-mono {
+  font-family: var(--font-mono);
+}
+
+/* ── kit ── */
+
+.k-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(var(--line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--line) 1px, transparent 1px);
+  background-size: 96px 96px;
+  mask-image: radial-gradient(ellipse 75% 70% at 50% 50%, #000 20%, transparent 80%);
+  pointer-events: none;
+  z-index: -1;
+}
+
+.k-glow {
+  position: absolute;
+  left: 50%;
+  top: 55%;
+  width: 1400px;
+  height: 700px;
+  translate: -50% -50%;
+  border-radius: 50%;
+  background: radial-gradient(closest-side, rgba(212, 0, 42, 0.18), transparent);
+  filter: blur(60px);
+  pointer-events: none;
+  z-index: -1;
+}
+
+.k-kicker {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 18px;
+  width: fit-content;
+  padding: 14px 26px;
+  border: 1.5px solid var(--line-strong);
+  border-radius: 999px;
+  font-family: var(--font-mono);
+  font-size: 22px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+  background: rgba(10, 10, 13, 0.6);
+}
+
+.k-kicker__rombo {
+  width: 24px;
+  height: 24px;
+  color: var(--crimson);
+}
+
+/* ── 03 tabla ── */
+
+.t-head {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  margin-bottom: 64px;
+}
+
+.t-table {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.t-row {
+  display: grid;
+  grid-template-columns: 80px 380px 260px 1fr 160px;
+  align-items: center;
+  gap: 32px;
+  height: 92px;
+  padding: 0 32px;
+  border: 1.5px solid var(--line);
+  border-radius: 14px;
+  background: rgba(19, 19, 24, 0.7);
+  font-size: 36px;
+  cursor: pointer;
+  transition:
+    border-color 0.2s,
+    background 0.2s,
+    opacity 0.3s;
+}
+
+.t-row:hover {
+  border-color: var(--line-strong);
+}
+
+.t-row--labels {
+  height: auto;
+  padding-bottom: 6px;
+  border: 0;
+  background: none;
+  font-family: var(--font-mono);
+  font-size: 18px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  cursor: default;
+}
+
+.t-row[data-dim='true'] {
+  opacity: 0.3;
+}
+
+.t-row[data-selected='true'] {
+  border-color: var(--crimson);
+  background: rgba(212, 0, 42, 0.12);
+}
+
+.t-num {
+  font-family: var(--font-mono);
+  font-size: 24px;
+  color: var(--crimson-hi);
+}
+
+.t-value {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+  font-weight: 500;
+}
+
+.t-bar {
+  height: 14px;
+  border-radius: 7px;
+  background: rgba(242, 239, 233, 0.06);
+  overflow: hidden;
+}
+
+.t-bar > div {
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, var(--crimson), var(--crimson-hi));
+  transform-origin: left;
+}
+
+.t-delta {
+  font-family: var(--font-mono);
+  font-size: 30px;
+  text-align: right;
+}
+
+/* ── 04 interactiva ── */
+
+.i-field {
+  position: relative;
+  width: 1100px;
+  padding: 28px 36px;
+  border: 2px solid var(--line-strong);
+  border-radius: 20px;
+  background: rgba(19, 19, 24, 0.85);
+  font-family: var(--font-mono);
+  font-size: 44px;
+  color: var(--ink);
+  outline: none;
+  transition:
+    border-color 0.2s,
+    box-shadow 0.2s;
+}
+
+.i-field:focus {
+  border-color: var(--crimson);
+  box-shadow: 0 0 0 8px rgba(212, 0, 42, 0.15);
+}
+
+.i-output {
+  position: relative;
+  min-height: 200px;
+  display: flex;
+  justify-content: center;
+  font-size: 180px;
+  font-weight: 700;
+  letter-spacing: -0.05em;
+  line-height: 1;
+}
+
+.i-star {
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  margin: -60px 0 0 -60px;
+  color: var(--crimson-hi);
+  pointer-events: none;
+}
+
+.i-hint {
+  position: absolute;
+  bottom: 70px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-family: var(--font-mono);
+  font-size: 20px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--faint);
+}
+
+/* ── 05 pasos ── */
+
+.p-cards {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 36px;
+  margin-top: 80px;
+}
+
+.p-card {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  min-height: 420px;
+  padding: 48px;
+  border: 1.5px solid var(--line-strong);
+  border-radius: 28px;
+  background: rgba(19, 19, 24, 0.85);
+}
+
+.p-card__num {
+  font-family: var(--font-mono);
+  font-size: 26px;
+  color: var(--crimson-hi);
+}
+
+.p-card__title {
+  margin: 0;
+  font-size: 72px;
+  font-weight: 700;
+  letter-spacing: -0.04em;
+}
+
+.p-card__text {
+  margin: 0;
+  font-size: 32px;
+  line-height: 1.4;
+  color: var(--muted);
+}
+
+.p-slot {
+  min-height: 420px;
+  border: 1.5px dashed var(--line);
+  border-radius: 28px;
+}
+
+.p-footer {
+  position: relative;
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: var(--font-mono);
+  font-size: 22px;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+}
+
+.p-dots {
+  display: flex;
+  gap: 12px;
+}
+
+.p-dots span {
+  width: 44px;
+  height: 6px;
+  border-radius: 3px;
+  background: var(--line-strong);
+  transition: background 0.3s;
+}
+
+.p-dots span[data-on='true'] {
+  background: var(--crimson);
+}
