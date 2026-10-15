@@ -61,6 +61,12 @@ El lienzo mide siempre **1920×1080** y se escala a la pantalla: diseña en esos
 
 Piezas reutilizables opcionales en `src/presentation/kit.tsx` (`Backdrop`, `Kicker`), colores animables en `palette.ts` y estilos compartidos en `theme.css`.
 
+## La presentación
+
+`src/presentation/index.ts` lista las escenas del deck real (`src/presentation/deck/`). Las piezas compartidas viven en `deck/parts/` (mapa de leyes con `layoutId`, timeline, nube, texto bandera, datos de leyes). Las demos del motor siguen en `src/presentation/demo/` como plantilla.
+
+Hooks extra para escenas: `useSteps(n)` (pasos internos con → / ←) y `useAfter(ms)` (momentos temporizados; inmediatos en miniaturas).
+
 ## Estructura
 
 ```
@@ -70,4 +76,20 @@ src/
   home/           pantalla de inicio
   player/         reproductor a pantalla completa
   tester/         grid de escenas + inspector
+```
+
+## Mapa de EE. UU. (`src/components/usmap`)
+
+Dos piezas separadas:
+
+- `<UsMap>`: mapa base plano con todas las fronteras de estados (datos `us-atlas`, proyección Albers USA con Alaska y Hawái). Props: `fills` (color por nombre de estado), `onStateClick`, `onStateHover`, `viewBox` (cambiarlo anima zoom/paneo).
+- `<UsMapLife>`: capa de vida opcional (monumentos, vehículos, clima). Va como hijo de `<UsMap>`.
+
+Para poner cualquier cosa sobre el mapa por coordenadas: `<Place at={[lon, lat]}>…</Place>` (el `0,0` del dibujo cae en ese punto). `routeThrough([[lon, lat], …])` devuelve un path suave para rutas.
+
+```tsx
+<UsMap fills={{ Texas: '#d4002a' }}>
+  <UsMapLife />
+  <Place at={[-74.0, 40.7]}>{/* tu SVG */}</Place>
+</UsMap>
 ```

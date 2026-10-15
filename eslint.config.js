@@ -22,7 +22,7 @@ export default defineConfig([
   {
     // Scene files export a scene object, not a component. HMR still works:
     // the update bubbles up to the components that import the deck.
-    files: ['src/presentation/scenes/**/*.tsx'],
+    files: ['src/presentation/demo/**/*.tsx', 'src/presentation/deck/*.tsx'],
     rules: { 'react-refresh/only-export-components': 'off' },
   },
 ])

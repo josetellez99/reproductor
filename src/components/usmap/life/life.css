@@ -1,0 +1,616 @@
+/* Loops for the map life layer. Lengths are map units (SVG user space). */
+
+.usmap-life {
+  pointer-events: none;
+}
+
+.usmap-life [class] {
+  transform-box: fill-box;
+}
+
+/* ── small loops ── */
+
+.lm-flame {
+  transform-origin: 50% 100%;
+  animation: flicker 0.35s ease-in-out infinite alternate;
+}
+
+@keyframes flicker {
+  to {
+    transform: scale(0.88, 1.08);
+  }
+}
+
+.lm-blink {
+  animation: blink-soft 1.4s steps(2, start) infinite;
+}
+
+@keyframes blink-soft {
+  to {
+    opacity: 0.2;
+  }
+}
+
+.lm-window {
+  animation: blink-soft 3.2s steps(2, start) infinite;
+}
+
+.lm-bulbs {
+  animation: bulbs 0.9s linear infinite;
+}
+
+@keyframes bulbs {
+  to {
+    stroke-dashoffset: -3.6;
+  }
+}
+
+.lm-bounce {
+  animation: bounce 1.6s ease-in-out infinite;
+}
+
+@keyframes bounce {
+  50% {
+    transform: translateY(-3px);
+  }
+}
+
+.lm-pulse {
+  transform-origin: 50% 50%;
+  animation: pulse 2.4s ease-out infinite;
+}
+
+@keyframes pulse {
+  from {
+    transform: scale(0.4);
+    opacity: 0.9;
+  }
+  to {
+    transform: scale(1.2);
+    opacity: 0;
+  }
+}
+
+.lm-fog {
+  animation: fog 9s ease-in-out infinite alternate;
+}
+
+@keyframes fog {
+  to {
+    transform: translateX(14px);
+    opacity: 0.4;
+  }
+}
+
+/* ── Golden Gate traffic ── */
+
+.gg-cars-a {
+  animation: gg-east 7s linear infinite;
+}
+
+.gg-cars-b {
+  animation: gg-west 6s linear infinite;
+}
+
+@keyframes gg-east {
+  from {
+    transform: translateX(-4px);
+  }
+  to {
+    transform: translateX(40px);
+  }
+}
+
+@keyframes gg-west {
+  from {
+    transform: translateX(4px);
+  }
+  to {
+    transform: translateX(-40px);
+  }
+}
+
+/* ── nature ── */
+
+.geyser-jet {
+  transform-origin: 50% 100%;
+  animation: geyser 6s ease-in-out infinite;
+}
+
+@keyframes geyser {
+  0%,
+  45% {
+    transform: scaleY(0.05);
+    opacity: 0;
+  }
+  55% {
+    transform: scaleY(1.05);
+    opacity: 1;
+  }
+  80% {
+    transform: scaleY(0.9);
+    opacity: 0.9;
+  }
+  100% {
+    transform: scaleY(0.05);
+    opacity: 0;
+  }
+}
+
+.geyser-steam {
+  transform-origin: 50% 50%;
+  animation: geyser-steam 6s ease-out infinite;
+}
+
+@keyframes geyser-steam {
+  0%,
+  50% {
+    transform: translateY(0) scale(0.4);
+    opacity: 0;
+  }
+  58% {
+    opacity: 0.9;
+  }
+  100% {
+    transform: translateY(-14px) scale(2.2);
+    opacity: 0;
+  }
+}
+
+.volcano-smoke,
+.stack-smoke {
+  transform-origin: 50% 50%;
+  animation: puff 3.6s ease-out infinite;
+}
+
+@keyframes puff {
+  from {
+    transform: translateY(0) scale(0.4);
+    opacity: 0.9;
+  }
+  to {
+    transform: translateY(-10px) scale(1.8);
+    opacity: 0;
+  }
+}
+
+.volcano-smoke {
+  animation-duration: 4.8s;
+}
+
+.stack-smoke {
+  animation-duration: 1.8s;
+}
+
+.lava-glow {
+  animation: lava 1.8s ease-in-out infinite alternate;
+}
+
+@keyframes lava {
+  to {
+    opacity: 0.55;
+  }
+}
+
+.tornado-wander {
+  animation: wander 14s ease-in-out infinite alternate;
+}
+
+@keyframes wander {
+  from {
+    transform: translateX(-14px);
+  }
+  to {
+    transform: translateX(16px);
+  }
+}
+
+.tornado-sway {
+  transform-origin: 50% 100%;
+  animation: sway 1.8s ease-in-out infinite alternate;
+}
+
+@keyframes sway {
+  from {
+    transform: skewX(-8deg);
+  }
+  to {
+    transform: skewX(8deg);
+  }
+}
+
+.tornado-debris {
+  transform-origin: 50% 50%;
+  animation: spin 1.4s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.palm-sway {
+  transform-origin: 50% 100%;
+  animation: palm 3s ease-in-out infinite alternate;
+}
+
+@keyframes palm {
+  from {
+    transform: rotate(-3deg);
+  }
+  to {
+    transform: rotate(3deg);
+  }
+}
+
+.aurora {
+  animation: aurora 6s ease-in-out infinite alternate;
+}
+
+@keyframes aurora {
+  from {
+    opacity: 0.35;
+    transform: translateX(-4px) skewX(-4deg);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(4px) skewX(4deg);
+  }
+}
+
+.wave {
+  animation: wave 3.5s ease-in-out infinite;
+}
+
+@keyframes wave {
+  0%,
+  100% {
+    opacity: 0;
+    transform: translateX(-2px);
+  }
+  50% {
+    opacity: 1;
+    transform: translateX(2px);
+  }
+}
+
+/* ── vehicles ── */
+
+.car-bob {
+  animation: bob 0.5s ease-in-out infinite alternate;
+}
+
+.raft-bob,
+.boat-bob {
+  transform-origin: 50% 100%;
+  animation: rock 2.6s ease-in-out infinite alternate;
+}
+
+@keyframes bob {
+  to {
+    transform: translateY(-0.4px);
+  }
+}
+
+@keyframes rock {
+  from {
+    transform: rotate(-4deg) translateY(0);
+  }
+  to {
+    transform: rotate(4deg) translateY(-0.8px);
+  }
+}
+
+.raft-ripple {
+  transform-origin: 50% 50%;
+  animation: ripple 2.6s ease-out infinite;
+}
+
+@keyframes ripple {
+  from {
+    transform: scale(0.6);
+    opacity: 1;
+  }
+  to {
+    transform: scale(1.3);
+    opacity: 0;
+  }
+}
+
+.flag-wave {
+  transform-origin: 0 50%;
+  animation: flag 0.8s ease-in-out infinite alternate;
+}
+
+@keyframes flag {
+  to {
+    transform: skewY(8deg) scaleX(0.9);
+  }
+}
+
+.arm-wave {
+  transform-origin: 0 100%;
+  animation: arm 0.6s ease-in-out infinite alternate;
+}
+
+@keyframes arm {
+  to {
+    transform: rotate(-35deg);
+  }
+}
+
+.road-dashes {
+  animation: dashes 1s linear infinite;
+}
+
+@keyframes dashes {
+  to {
+    stroke-dashoffset: 4;
+  }
+}
+
+.flight-trail {
+  animation: dashes 0.8s linear infinite reverse;
+}
+
+.ship-cruise {
+  animation: cruise 22s ease-in-out infinite alternate;
+}
+
+@keyframes cruise {
+  from {
+    transform: translateX(-10px);
+  }
+  to {
+    transform: translateX(10px);
+  }
+}
+
+/* ── rocket: 10s cycle, idle → ignition → lift-off → gone ── */
+
+.rocket-fly {
+  animation: rocket-fly 10s infinite;
+}
+
+@keyframes rocket-fly {
+  0% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+  4% {
+    opacity: 1;
+  }
+  34% {
+    transform: translateY(0);
+    animation-timing-function: cubic-bezier(0.55, 0, 1, 1);
+  }
+  80% {
+    transform: translateY(-110px);
+    opacity: 1;
+  }
+  90%,
+  100% {
+    transform: translateY(-140px);
+    opacity: 0;
+  }
+}
+
+.rocket-trail {
+  transform-origin: 50% 0;
+  animation: rocket-trail 10s infinite;
+}
+
+@keyframes rocket-trail {
+  0%,
+  34% {
+    transform: scaleY(0);
+  }
+  80%,
+  100% {
+    transform: scaleY(1);
+  }
+}
+
+.rocket-flame {
+  transform-origin: 50% 0;
+  animation:
+    flicker 0.12s ease-in-out infinite alternate,
+    rocket-thrust 10s infinite;
+}
+
+@keyframes rocket-thrust {
+  0%,
+  26% {
+    scale: 0.35;
+  }
+  34%,
+  100% {
+    scale: 1.4;
+  }
+}
+
+.rocket-smoke {
+  transform-origin: 50% 100%;
+  animation: rocket-smoke 10s infinite;
+}
+
+@keyframes rocket-smoke {
+  0%,
+  28% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  36% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  70%,
+  100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+/* ── clouds ── */
+
+.cloud-drift {
+  animation: drift var(--dur, 100s) linear infinite;
+}
+
+@keyframes drift {
+  from {
+    transform: translateX(-180px);
+  }
+  to {
+    transform: translateX(1120px);
+  }
+}
+
+/* ── second batch ── */
+
+.flyer-path {
+  animation: flyer-path 16s ease-in-out infinite alternate;
+}
+
+@keyframes flyer-path {
+  from {
+    transform: translateX(-24px);
+  }
+  to {
+    transform: translateX(24px);
+  }
+}
+
+.flyer-bob {
+  animation: rock 1.6s ease-in-out infinite alternate;
+  transform-origin: 50% 50%;
+}
+
+.balloon-float {
+  animation: balloon 7s ease-in-out infinite alternate;
+}
+
+@keyframes balloon {
+  from {
+    translate: 0 4px;
+  }
+  to {
+    translate: 0 -10px;
+  }
+}
+
+.note-float {
+  animation: note 2.2s ease-out infinite;
+}
+
+@keyframes note {
+  from {
+    transform: translate(0, 0);
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  to {
+    transform: translate(4px, -9px);
+    opacity: 0;
+  }
+}
+
+.horse-gallop {
+  animation: gallop 0.45s ease-in-out infinite alternate;
+  transform-origin: 50% 100%;
+}
+
+@keyframes gallop {
+  from {
+    transform: rotate(-3deg) translateY(0);
+  }
+  to {
+    transform: rotate(3deg) translateY(-1px);
+  }
+}
+
+.factory-car {
+  animation: factory-car 5s linear infinite;
+}
+
+@keyframes factory-car {
+  from {
+    transform: translateX(0);
+    opacity: 0;
+  }
+  15% {
+    opacity: 1;
+  }
+  to {
+    transform: translateX(-10px);
+    opacity: 0;
+  }
+}
+
+.skier {
+  animation: skier 4s ease-in infinite;
+}
+
+@keyframes skier {
+  from {
+    transform: translate(2px, -10px);
+    opacity: 0;
+  }
+  15% {
+    opacity: 1;
+  }
+  to {
+    transform: translate(-11px, -1px);
+    opacity: 0;
+  }
+}
+
+.rain {
+  animation: rain 0.8s linear infinite;
+}
+
+@keyframes rain {
+  from {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+  to {
+    transform: translate(-1px, 4px);
+    opacity: 0;
+  }
+}
+
+.lobster-wave {
+  animation: rock 1.2s ease-in-out infinite alternate;
+  transform-origin: 50% 100%;
+}
+
+.chip-traces {
+  animation: dashes 0.7s linear infinite;
+}
+
+.chip-core {
+  animation: lava 1.2s ease-in-out infinite alternate;
+}
+
+.surfer-ride {
+  animation: surf 2.4s ease-in-out infinite alternate;
+}
+
+@keyframes surf {
+  from {
+    transform: translate(-2px, 1px) rotate(-4deg);
+  }
+  to {
+    transform: translate(2px, -1px) rotate(4deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .usmap-life * {
+    animation-play-state: paused !important;
+  }
+}

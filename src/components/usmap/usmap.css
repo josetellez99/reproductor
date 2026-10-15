@@ -1,0 +1,49 @@
+.usmap {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.usmap__halo {
+  fill: none;
+  stroke: var(--crimson);
+  stroke-width: 10;
+  opacity: 0.18;
+}
+
+.usmap__states path {
+  fill: var(--fill);
+  transition:
+    fill 0.6s,
+    filter 0.2s;
+}
+
+.usmap__states path[data-highlight='true'] {
+  stroke: rgba(255, 120, 140, 0.55);
+  stroke-width: 0.6;
+}
+
+.usmap[data-interactive='true'] .usmap__states path {
+  cursor: pointer;
+}
+
+.usmap[data-interactive='true'] .usmap__states path:hover {
+  filter: brightness(1.45);
+}
+
+.usmap__borders {
+  fill: none;
+  stroke: rgba(242, 239, 233, 0.16);
+  stroke-width: 0.6;
+  stroke-linejoin: round;
+  pointer-events: none;
+}
+
+.usmap__coast {
+  fill: none;
+  stroke: rgba(242, 239, 233, 0.38);
+  stroke-width: 0.9;
+  stroke-linejoin: round;
+  pointer-events: none;
+}

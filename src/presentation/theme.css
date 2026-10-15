@@ -323,3 +323,23 @@
 .p-dots span[data-on='true'] {
   background: var(--crimson);
 }
+
+/* ── 06 mapa ── */
+
+.usa-hud {
+  position: absolute;
+  top: 36px;
+  left: 50%;
+  translate: -50% 0;
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  pointer-events: none;
+}
+
+.usa-hud__state {
+  font-size: 40px;
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  color: var(--ink);
+}
