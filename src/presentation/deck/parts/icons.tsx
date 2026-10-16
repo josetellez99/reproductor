@@ -152,3 +152,40 @@ export const IconMegaphone = (p: P) => (
     <path d="M18 9a4 4 0 0 1 0 6" />
   </Icon>
 )
+
+export const IconChecklist = (p: P) => (
+  <Icon {...p}>
+    <rect x="4" y="3" width="16" height="18" rx="2" />
+    <path d="M8 8l1.5 1.5L12 7M8 14l1.5 1.5L12 13M14 8.5h3M14 14.5h3" />
+  </Icon>
+)
+
+export const IconFingerprint = (p: P) => (
+  <Icon {...p}>
+    <path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z" />
+    <path d="M9 15.5c.6-1 .9-2.2.9-3.5a2.1 2.1 0 0 1 4.2 0c0 1.8-.4 3.4-1.1 4.8" />
+    <path d="M7.4 13.6c.1-.5.1-1 .1-1.6a4.5 4.5 0 0 1 9 0c0 .8 0 1.6-.2 2.4" />
+  </Icon>
+)
+
+export const IconGavel = (p: P) => (
+  <Icon {...p}>
+    <path d="M14 4l6 6M11.5 6.5l6 6M12.5 5.5l-4 4 6 6 4-4" />
+    <path d="M10.5 11.5L3 19l2 2 7.5-7.5" />
+    <path d="M14 21h7" />
+  </Icon>
+)
+
+export const IconAlert = (p: P) => (
+  <Icon {...p}>
+    <path d="M12 3L2 20h20z" />
+    <path d="M12 10v4M12 17h.01" />
+  </Icon>
+)
+
+export const IconCheck = (p: P) => (
+  <Icon {...p}>
+    <circle cx="12" cy="12" r="9" />
+    <path d="M8 12.5l2.5 2.5L16 9.5" />
+  </Icon>
+)

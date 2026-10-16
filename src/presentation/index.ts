@@ -12,6 +12,12 @@ import gdpr from './deck/10-gdpr'
 import statesFollow from './deck/11-states-follow'
 import ccpaStandard from './deck/12-ccpa-standard'
 import itDepends from './deck/13-it-depends'
+import threeQuestions from './deck/14-three-questions'
+import sephoraFine from './deck/15-sephora-fine'
+import whyRisk from './deck/16-why-risk'
+import credentialStuffing from './deck/17-credential-stuffing'
+import bruteForce from './deck/18-brute-force'
+import sephoraRemediation from './deck/19-sephora-remediation'
 import './theme.css'
 import './deck/deck.css'
 
@@ -30,4 +36,10 @@ export const scenes: Scene[] = [
   statesFollow,
   ccpaStandard,
   itDepends,
+  threeQuestions,
+  sephoraFine,
+  whyRisk,
+  credentialStuffing,
+  bruteForce,
+  sephoraRemediation,
 ]
