@@ -28,6 +28,8 @@ import compareEnforcement from './deck/25-compare-enforcement'
 import gdprFines from './deck/26-gdpr-fines'
 import discussion from './deck/27-discussion'
 import bridges from './deck/28-bridges'
+import sources from './deck/29-sources'
+import thanks from './deck/30-thanks'
 import './theme.css'
 import './deck/deck.css'
 
@@ -62,4 +64,6 @@ export const scenes: Scene[] = [
   gdprFines,
   discussion,
   bridges,
+  sources,
+  thanks,
 ]

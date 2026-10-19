@@ -3082,3 +3082,107 @@
   letter-spacing: 0.12em;
   text-transform: uppercase;
 }
+
+/* ── 29 sources ───────────────────────────────────────────── */
+
+.src-root {
+  padding: 80px 140px;
+}
+
+.src-head {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 44px;
+}
+
+.src-title {
+  margin: 0;
+  font-size: 110px;
+  font-weight: 700;
+  line-height: 0.9;
+  letter-spacing: 0.02em;
+}
+
+.src-aside {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: 20px;
+  font-style: italic;
+  letter-spacing: 0.04em;
+  color: var(--faint);
+}
+
+/* APA: hanging indent, entries in order, no numbering. */
+.src-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.src-list li {
+  padding-left: 60px;
+  text-indent: -60px;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 25px;
+  line-height: 1.45;
+  color: var(--ink);
+}
+
+.src-list i {
+  color: #fff;
+}
+
+.src-url {
+  color: var(--muted);
+  overflow-wrap: anywhere;
+}
+
+/* ── 30 thanks ────────────────────────────────────────────── */
+
+.thx-root {
+  padding: 0;
+  overflow: hidden;
+}
+
+.thx-word {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  white-space: nowrap;
+  font-size: 50px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  opacity: 0;
+  transition: opacity 0.8s;
+  will-change: transform;
+}
+
+.thx-word[data-ready='true'] {
+  opacity: 1;
+}
+
+.thx-word img {
+  width: 56px;
+  height: 42px;
+  border-radius: 6px;
+  object-fit: cover;
+  box-shadow: 0 0 0 1px rgba(242, 239, 233, 0.15);
+}
+
+.thx-word[data-first='true'] {
+  z-index: 1;
+  font-size: 84px;
+  color: #d97757;
+}
+
+.thx-word[data-first='true'] img {
+  width: 90px;
+  height: 68px;
+}
