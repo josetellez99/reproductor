@@ -2,18 +2,18 @@ import type { PointerEvent, ReactNode } from 'react'
 import { motion, useMotionValue, useSpring } from 'motion/react'
 
 interface MagneticButtonProps {
-  variant: 'primary' | 'ghost'
-  icon: ReactNode
+  variant?: 'primary' | 'ghost'
+  icon?: ReactNode
   label: string
-  hint: string
-  kbd: string
+  hint?: string
+  kbd?: string
   onClick: () => void
 }
 
 const spring = { stiffness: 260, damping: 18, mass: 0.6 }
 
 /** Big home button that leans towards the pointer. */
-export function MagneticButton({ variant, icon, label, hint, kbd, onClick }: MagneticButtonProps) {
+export function MagneticButton({ variant = 'primary', icon, label, hint, kbd, onClick }: MagneticButtonProps) {
   const x = useMotionValue(0)
   const y = useMotionValue(0)
   const sx = useSpring(x, spring)
@@ -39,12 +39,12 @@ export function MagneticButton({ variant, icon, label, hint, kbd, onClick }: Mag
       onPointerLeave={reset}
       onClick={onClick}
     >
-      <span className="mag-btn__icon">{icon}</span>
+      {icon && <span className="mag-btn__icon">{icon}</span>}
       <span className="mag-btn__text">
         <span className="mag-btn__label">{label}</span>
-        <span className="mag-btn__hint">{hint}</span>
+        {hint && <span className="mag-btn__hint">{hint}</span>}
       </span>
-      <kbd className="mag-btn__kbd">{kbd}</kbd>
+      {kbd && <kbd className="mag-btn__kbd">{kbd}</kbd>}
     </motion.button>
   )
 }
