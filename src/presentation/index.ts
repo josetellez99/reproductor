@@ -18,6 +18,15 @@ import whyRisk from './deck/16-why-risk'
 import credentialStuffing from './deck/17-credential-stuffing'
 import bruteForce from './deck/18-brute-force'
 import sephoraRemediation from './deck/19-sephora-remediation'
+import debateFor from './deck/20-debate-for'
+import debateAgainst from './deck/21-debate-against'
+import tradeOff from './deck/22-trade-off'
+import usVsSpain from './deck/23-us-vs-spain'
+import compareModel from './deck/24-compare-model'
+import compareEnforcement from './deck/25-compare-enforcement'
+import gdprFines from './deck/26-gdpr-fines'
+import discussion from './deck/27-discussion'
+import bridges from './deck/28-bridges'
 import './theme.css'
 import './deck/deck.css'
 
@@ -42,4 +51,13 @@ export const scenes: Scene[] = [
   credentialStuffing,
   bruteForce,
   sephoraRemediation,
+  debateFor,
+  debateAgainst,
+  tradeOff,
+  usVsSpain,
+  compareModel,
+  compareEnforcement,
+  gdprFines,
+  discussion,
+  bridges,
 ]

@@ -189,3 +189,31 @@ export const IconCheck = (p: P) => (
     <path d="M8 12.5l2.5 2.5L16 9.5" />
   </Icon>
 )
+
+export const IconRocket = (p: P) => (
+  <Icon {...p}>
+    <path d="M9 15l-3-3c1.2-4.5 5.5-9 13-9 0 7.5-4.5 11.8-9 13z" />
+    <circle cx="14.5" cy="9.5" r="1.6" />
+    <path d="M6 12H3l2.5-3.5H9M12 18v3l3.5-2.5V15M5.5 15.5C4 17 4 20 4 20s3 0 4.5-1.5" />
+  </Icon>
+)
+
+export const IconPuzzle = (p: P) => (
+  <Icon {...p}>
+    <path d="M4 8h4a2 2 0 1 1 4 0h4v4a2 2 0 1 1 0 4v4H4v-4a2 2 0 1 0 0-4z" />
+  </Icon>
+)
+
+export const IconEye = (p: P) => (
+  <Icon {...p}>
+    <path d="M2 12s3.8-7 10-7 10 7 10 7-3.8 7-10 7S2 12 2 12z" />
+    <circle cx="12" cy="12" r="3" />
+  </Icon>
+)
+
+export const IconCross = (p: P) => (
+  <Icon {...p}>
+    <circle cx="12" cy="12" r="9" />
+    <path d="M9 9l6 6M15 9l-6 6" />
+  </Icon>
+)
