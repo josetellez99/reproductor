@@ -1,4 +1,5 @@
 import type { Scene } from '../engine'
+import group from './deck/00-group'
 import title from './deck/01-title'
 import revolutions from './deck/02-revolutions'
 import areas from './deck/03-areas'
@@ -32,6 +33,7 @@ import './deck/deck.css'
 
 /** The presentation: scenes in playback order. Engine demos live in ./demo. */
 export const scenes: Scene[] = [
+  group,
   title,
   revolutions,
   areas,
