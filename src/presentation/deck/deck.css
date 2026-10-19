@@ -3197,8 +3197,6 @@
 }
 
 .uncle-sam__figure {
-  height: 80%;
+  height: 100%;
   width: auto;
-  max-width: 100%;
-  object-fit: contain;
 }
