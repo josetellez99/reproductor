@@ -6,7 +6,7 @@ import { DustText } from './parts/DustText'
 import { Typewriter } from './parts/Typewriter'
 
 const CLAUDE_ORANGE = '#d97757'
-const MEMBERS = ['Jose Tellez', 'Adair Gonzales', 'Alfredo Medinilla']
+const MEMBERS = ['Jose Tellez', 'Adair Gonzalez', 'Alfredo Medinilla']
 const NUMERALS = ['I', 'II', 'III']
 
 // Timeline (ms): "A presentation by" types → the name gathers from dust → members type one by one → Rome.
@@ -142,5 +142,5 @@ export default defineScene({
   component: Group,
   transition: 'fade',
   notes:
-    'We are Triumvirate: Jose Tellez, Adair Gonzales and Alfredo Medinilla. The name comes from Rome — trium virorum, “of three men”. In 60 BC Caesar, Pompey and Crassus shared power in the First Triumvirate; in 43 BC Octavian, Mark Antony and Lepidus formed the Second. Three of us, one topic.',
+    'We are Triumvirate: Jose Tellez, Adair Gonzalez and Alfredo Medinilla. The name comes from Rome — trium virorum, “of three men”. In 60 BC Caesar, Pompey and Crassus shared power in the First Triumvirate; in 43 BC Octavian, Mark Antony and Lepidus formed the Second. Three of us, one topic.',
 })
