@@ -3186,17 +3186,3 @@
   width: 90px;
   height: 68px;
 }
-
-/* ── Uncle Sam ────────────────────────────────────────────── */
-
-.uncle-sam {
-  padding: 0;
-  background: #000;
-  display: grid;
-  place-items: center;
-}
-
-.uncle-sam__figure {
-  height: 100%;
-  width: auto;
-}

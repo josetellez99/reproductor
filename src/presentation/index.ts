@@ -1,7 +1,6 @@
 import type { Scene } from '../engine'
 import group from './deck/00-group'
 import title from './deck/01-title'
-import unclesam from './deck/01b-uncle-sam'
 import revolutions from './deck/02-revolutions'
 import areas from './deck/03-areas'
 import dataPrivacy from './deck/04-data-privacy'
@@ -38,7 +37,6 @@ import './deck/deck.css'
 export const scenes: Scene[] = [
   group,
   title,
-  unclesam,
   revolutions,
   areas,
   dataPrivacy,
